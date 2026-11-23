@@ -1,0 +1,42 @@
+# The roster. The Office Manager reads this; the owner edits it.
+owner:
+  name: <OWNER_NAME>
+  timezone: Africa/Cairo
+  approval_threshold_egp: <AMOUNT>
+
+departments:
+  security:
+    - slug: security
+      name: طارق
+      role: Security Officer
+      status: active        # active | paused | not_hired
+      hired: 2026-11-23
+  finance:
+    - slug: accountant
+      name: سامي
+      role: Accountant
+      status: not_hired
+    - slug: cfo
+      name: هشام
+      role: CFO
+      status: not_hired
+  operations:
+    - slug: secretary
+      name: عمر
+      role: Secretary / EA
+      status: not_hired
+  growth:
+    - slug: media-buyer
+      name: منى
+      role: Media Buyer
+      status: not_hired
+  people:
+    - slug: trainer
+      name: نور
+      role: Trainer / HR
+      status: not_hired
+  legal:
+    - slug: lawyer
+      name: رامي
+      role: Lawyer
+      status: not_hired

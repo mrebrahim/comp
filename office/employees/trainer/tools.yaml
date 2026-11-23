@@ -1,0 +1,5 @@
+slug: trainer
+# Tools this employee may call. Must stay in sync with the `tools:`
+# frontmatter in .claude/agents/trainer.md — that file is what actually binds.
+allowed: []
+pending_mcp: []

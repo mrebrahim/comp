@@ -1,0 +1,5 @@
+slug: lawyer
+# Tools this employee may call. Must stay in sync with the `tools:`
+# frontmatter in .claude/agents/lawyer.md — that file is what actually binds.
+allowed: []
+pending_mcp: []
