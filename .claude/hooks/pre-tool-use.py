@@ -60,8 +60,16 @@ RULES = [
 ]
 
 
+# Commentary and plumbing, not part of what executes. These must stay out of
+# the fingerprint: otherwise a retry whose description was reworded hashes
+# differently and its own approval never matches it.
+NON_SEMANTIC = {"description", "timeout", "run_in_background", "_host",
+                "dangerouslyDisableSandbox"}
+
+
 def fingerprint(tool, tool_input):
-    blob = json.dumps(tool_input, ensure_ascii=False, sort_keys=True)
+    material = {k: v for k, v in tool_input.items() if k not in NON_SEMANTIC}
+    blob = json.dumps(material, ensure_ascii=False, sort_keys=True)
     return hashlib.sha256((tool + "\n" + blob).encode("utf-8")).hexdigest()[:16]
 
 
