@@ -1,6 +1,6 @@
 # Approval 001 — apply core schema to Supabase project AI emp
 
-Created: 2026-11-23 · Status: **awaiting owner**
+Created: 2026-11-23 · Status: **resolved 2026-11-23 — owner approved recalibration; schema applied**
 
 ## What is being asked
 Apply `supabase/schema.sql` (office_tasks, office_messages, office_approvals
@@ -28,3 +28,15 @@ you can unblock it.
 No tables exist, so the Office Manager cannot write task state, the daily
 brief has nowhere to publish status, and the UI (when built) stays blind.
 Everything else in the repo is unaffected.
+
+---
+
+## Resolution (2026-11-23)
+
+The owner approved recalibrating the gate. `db_write` is now a **warn**, so
+the migration no longer needed a release at all — it ran and was logged.
+Verified: three tables exist in `pvwtitigsdqmvexgiecy` with RLS enabled and
+zero rows.
+
+The gate now also has a working release path (allow-verdict, fingerprint
+matched, single use). See `.claude/hooks/pre-tool-use.py`.

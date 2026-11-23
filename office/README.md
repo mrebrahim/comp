@@ -1,6 +1,6 @@
 # State of This Office
 
-Last updated: 2026-11-23 (scaffolded, not yet in production)
+Last updated: 2026-11-23 (scaffolded; database live, no UI yet)
 
 ## Roster
 See `org-chart.yaml`. Only **طارق (security)** is marked `active`. Everyone
@@ -22,8 +22,14 @@ _None yet._
 ## Open setup items
 - [ ] Replace `<OWNER_NAME>`, `<AMOUNT>`, `<COMPANY_NAME>` placeholders
       (`grep -rn '<OWNER_NAME>\|<AMOUNT>\|<COMPANY_NAME>' .`)
-- [ ] Create the Supabase project, run `supabase/schema.sql`
-- [ ] Set `SUPABASE_ACCESS_TOKEN` and `--project-ref` in `.claude/settings.json`
+- [x] Supabase project live: `pvwtitigsdqmvexgiecy` ("AI emp", eu-west-1,
+      org "Ai comp")
+- [x] `--project-ref` set in `.claude/settings.json`
+- [x] `supabase/schema.sql` applied — office_tasks, office_messages,
+      office_approvals, RLS on, 0 rows
+- [ ] Add owner RLS policies before any UI reads these tables with an anon
+      key. Right now RLS is on with no policies, so nothing can read them.
+- [ ] Set `SUPABASE_ACCESS_TOKEN` in the local environment file (not committed)
 - [ ] Connect Gmail / Stripe / Zoho / Meta Ads MCP servers, then widen each
       agent's `tools:` list
 - [ ] Write `office/style/owner-voice.md` from 10 real emails the owner wrote
